@@ -1,0 +1,23 @@
+<div style="display: flex;height:400px;flex-direction: column;height:500px;">  
+    <edu-form-card [formGroup]="bidsform" formTitle="Bid Detail">
+            <ng-container formfields>
+                          <mat-form-field class="example-full-width">
+                    <mat-label>Note*</mat-label>
+            <textarea matInput formControlName="bid_note" style="height: 100px;box-sizing: border-box;"></textarea>
+                </mat-form-field>
+    
+                <label id="example-radio-group-label">Currency*</label>&nbsp;&nbsp;&nbsp;
+                    <mat-radio-group  aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"  name="curList" formControlName="expected_price_currency">
+                        <mat-radio-button class="example-radio-button" *ngFor="let currency of currencyList;let i = index"
+                        [value]="currency.code" name="opList" >{{ currency.name}}</mat-radio-button>
+                      </mat-radio-group>
+    
+                <mat-form-field class="example-full-width">
+                        <input matInput name="price" type="number" formControlName="expected_price">
+                        <mat-placeholder class="placeholder">Bid Amount</mat-placeholder>
+                    </mat-form-field>       
+        
+        </ng-container>
+        </edu-form-card>
+    </div>

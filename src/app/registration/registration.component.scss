@@ -1,0 +1,13 @@
+.alignCenter {
+  @media only screen and (orientation: landscape) {
+    width: 70%;
+    max-width: 700px;
+  }
+  @media only screen and (orientation: portrait) {
+    width: calc(100% - 28px);
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

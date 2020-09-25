@@ -1,0 +1,35 @@
+<div style="display: flex;height:400px;flex-direction: column;height:500px;">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title >Bids</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <ag-grid-angular   #agGrid
+                style="width: 100%; height: 500px;"
+                class="ag-theme-alpine"
+                [rowData]="rowData"
+                [columnDefs]="columnDefs"
+                [rowSelection]="'multiple'"
+                [rowMultiSelectWithClick]= true
+                (rowClicked)='onRowClicked($event)'
+                (gridReady)="onGridReady($event)"
+                [enableSorting]="true"
+                pagination=true
+                paginationPageSize=10
+                >
+            </ag-grid-angular> 
+            
+            <ng-container actions>
+                <div style="display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;padding: 3px;margin-top: 5px;;">
+                        <button mat-raised-button (click)="executeOrder()" color="accent" [disabled]="userId.length===0">Execute Order</button>
+                </div>
+        
+            </ng-container>
+
+        </mat-card-content>
+    </mat-card>
+
+    
+</div>

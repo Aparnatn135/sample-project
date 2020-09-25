@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  
+}
+
+.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+.ag-theme-alpine {
+  @include ag-theme-alpine();
+}
+.app-bg {
+  @extend .fullscreen;
+  /* background-image: url(assets/bg2-min.jpg);
+  background-size: cover;
+  background-position: center;  */
+  background: aliceblue;  /* fallback for old browsers */
+  //background: -webkit-linear-gradient(to bottom, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+  //background: linear-gradient(to bottom, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+}
+
+.flexclass {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+

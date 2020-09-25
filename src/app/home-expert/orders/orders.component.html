@@ -1,0 +1,47 @@
+
+<div style="display: flex;height:400px;flex-direction: column;height:500px;">
+
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title >Orders</mat-card-title>
+        </mat-card-header>
+       
+
+        <mat-card-content>
+                <!-- <div style="display: flex;height:100px;flex-direction: column;width:300px;">
+                        <mat-form-field>
+                                <mat-label>Order Type</mat-label>
+                                <mat-select [(ngModel)]="selectedOrder" (ngModelChange)="orderChange($event)">
+                                  <mat-option *ngFor="let order of orderList" [value]="order.code" >
+                                    {{order.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+                    </div> -->
+                    <div btn>
+                      <ul>
+                        <li *ngFor="let order of orderList;let i=index">
+                          <button class="btn mat-button" [ngClass]="{'active': selectedIndex == i, 'list-group-item': true}" (click)="orderChange(order.code,i)">{{order.name}}</button>
+                         </li>
+                      </ul>
+                   </div>
+                    <ag-grid-angular   #agGrid
+                    style="width: 100%; height: 500px;"
+                    class="ag-theme-alpine"
+                    [rowData]="rowData"
+                    [columnDefs]="columnDefs"
+                    (rowClicked)='onRowClicked($event)'
+                    (gridReady)="onGridReady($event)"
+                    [enableSorting]="true"
+                    pagination=true
+                    paginationPageSize=10
+                    >
+                </ag-grid-angular>
+            
+        </mat-card-content>
+    </mat-card>
+
+    
+</div>

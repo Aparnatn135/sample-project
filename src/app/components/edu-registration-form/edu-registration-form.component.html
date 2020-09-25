@@ -1,0 +1,82 @@
+<edu-form-card [formTitle]="formTitle" [formGroup]="registerform">
+    <ng-container formfields>
+
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="name" required formControlName="name">
+            <mat-placeholder class="placeholder">Name</mat-placeholder>
+        </mat-form-field>
+        <p class="text-danger" *ngIf="registerform.get('name').errors?.pattern">
+            Please enter a valid name
+        </p>
+        <mat-form-field class="example-full-width">
+            <input matInput name="username" required formControlName="username">
+            <mat-placeholder class="placeholder">User Name</mat-placeholder>
+        </mat-form-field>
+        <p class="text-danger" *ngIf="registerform.get('username').errors?.pattern">
+            Username must start with letter and min. 3 char long
+        </p>
+        <mat-form-field class="example-full-width">
+            <input matInput name="email" required formControlName="email">
+            <mat-placeholder class="placeholder">Email</mat-placeholder>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="password" type="password" required formControlName="password">
+            <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field>
+        <p class="text-danger" *ngIf="registerform.get('password').errors?.pattern">
+           Password must be alphanumeric and min. 8 char long
+        </p>
+        <mat-form-field class="example-full-width">
+            <input matInput name="confirm_password" type="password" required formControlName="confirm_password">
+            <mat-placeholder class="placeholder">Confirm Password</mat-placeholder>
+        </mat-form-field>
+        <p class="text-danger" *ngIf="registerform.get('confirm_password').errors?.mismatch">
+           Password and Confirm passwor do not match
+        </p>
+        <mat-form-field class="example-full-width">
+            <input matInput name="mobile" required formControlName="mobile_no">
+            <mat-placeholder class="placeholder">Mobile No.</mat-placeholder>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Role</mat-label>
+            <mat-select name="role" required formControlName="role">
+                
+                <mat-option *ngFor="let role of rolesList" [value]="role.code">
+                    {{role.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+            <!-- <mat-form-field class="example-full-width">
+                <input matInput placeholder="Select Country" aria-label="Select Country" [matAutocomplete]="auto" required
+                    formControlName="country">
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                    <mat-option *ngFor="let country of filteredOptions | async" [value]="country">
+                        {{country.name}}
+                    </mat-option>
+                </mat-autocomplete>
+        </mat-form-field> -->
+<!-- 
+        <mat-form-field class="example-full-width">
+            <input matInput name="phone number" required formControlName="phonenumber">
+            <mat-placeholder class="placeholder">Enter Phone Number (Don't add country code)</mat-placeholder>
+        </mat-form-field> -->
+
+      
+
+
+
+    </ng-container>
+
+    <ng-container actions>
+        <div style="display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;">
+            <button mat-raised-button (click)="submit()" color="accent"
+                [disabled]="!registerform.valid">{{buttonTitle}}</button>
+        </div>
+
+    </ng-container>
+</edu-form-card>

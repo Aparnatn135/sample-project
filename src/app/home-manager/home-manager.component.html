@@ -1,0 +1,35 @@
+<div class="main-container"> 
+    <mat-toolbar color="primary" class="topbar ">
+        
+        <button mat-icon-button (click)="snav.toggle(isExpanded = !isExpanded)"><mat-icon>menu</mat-icon></button>
+        <span fxflex="" ng-reflect-fx-flex="" style="flex: 1 1 0%; box-sizing: border-box;"></span>
+        <app-header [dashboard]="dashboardUrl"></app-header>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" autosize>
+        <mat-sidenav #snav id="snav"  [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" mode="side" opened="true"  >
+
+            <mat-nav-list >
+                <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems" routerLinkActive="selected">
+                    <a class="" appAccordionToggle routerLink="{{menuitem.state}}" *ngIf="menuitem.type === 'link'">
+                        <mat-icon>{{ menuitem.icon }}</mat-icon> 
+                        <span matLine *ngIf="isExpanded">{{ menuitem.name }}</span> 
+                        <span fxFlex></span> 
+                        <span class="label label-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span> 
+                    </a>
+                </mat-list-item>            
+            </mat-nav-list>
+            
+        </mat-sidenav>
+        <mat-sidenav-content class="page-wrapper">
+                 
+               <div class="page-content"> 
+                   
+                        <router-outlet></router-outlet> 
+                    
+                 </div>     
+               
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>

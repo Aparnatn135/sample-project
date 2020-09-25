@@ -1,0 +1,29 @@
+<edu-form-card [formGroup]="profileForm" formTitle="Profile">
+    <ng-container formfields>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="username" required formControlName="name">
+            <mat-placeholder class="placeholder">Name</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="mail" required formControlName="email">
+            <mat-placeholder class="placeholder">Email</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="mobile" required formControlName="mobile_no">
+            <mat-placeholder class="placeholder">Mobile No.</mat-placeholder>
+        </mat-form-field>
+
+    </ng-container>
+
+    <!-- <ng-container actions>
+        <div style="display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;">
+            <button mat-raised-button (click)="upload()" color="accent" [disabled]="!form.valid">Upload</button>
+        </div>
+
+    </ng-container> -->
+</edu-form-card>

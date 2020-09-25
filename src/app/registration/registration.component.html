@@ -1,0 +1,62 @@
+<edu-page-container>
+
+   
+
+    <edu-page-content style="position: relative;">
+
+        <div class="alignCenter">
+            <mat-card style="width: 100%;box-sizing: border-box;">
+                <mat-card-content>
+                    <div style="height: 27px;text-align: center;border-radius: 6px;">
+                        <span style="font-size: 20px;">Call Us</span>
+                        <mat-icon style="font-size: 20px;">phone</mat-icon>
+                        <span style="font-size: 20px;">+91 7395918843</span>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div style="margin-top: 10px;" class="alignCenter">
+            <mat-card style="width: 100%;box-sizing: border-box;">
+                <mat-card-header color="accent">
+                    <mat-card-title>Please Choose</mat-card-title>
+                </mat-card-header>
+                <div class="alignCenter" *ngIf="isMessage">
+                    <mat-card style="width: 100%;box-sizing: border-box;">
+                        <mat-card-content>
+                            <div style="height: 20px;text-align: center;border-radius: 6px;">
+                                <span style="font-size: 15px;">{{message}}</span>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <mat-card-content
+                    style="width:100%;display: flex;flex-direction: column;justify-content: space-between;align-items: stretch;">
+                    <div style="display: grid;row-gap: 10px;grid-template-areas: 'options' 'form' ;">
+                        <div style="grid-area : options;">
+                            
+                                <div
+                                    style="display: grid;gap:10px;grid-template-areas: 'studentreg expertreg' 'login login'">
+                                    <button color="accent"  mat-raised-button (click)="userType=0">Registration</button>
+                                    <!-- <button color="accent" style="grid-area: expertreg;" mat-raised-button>Expert Registration</button> -->
+                                    <button color="accent" mat-raised-button (click)="userType=2">Login</button>
+                                  
+                                </div>
+                           
+                        </div>
+                        <div style="grid-area : form;">
+                            <edu-registration-form *ngIf="userType==0" formType="0" formTitle="Registration"
+                                buttonTitle="Register" (submitClicked)="submitClicked($event)">
+                            </edu-registration-form>
+                            <edu-login-form *ngIf="userType==2" formType="2" formTitle="Login"
+                                (submitClicked)="submitClicked($event)"></edu-login-form>
+                
+                        </div>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </edu-page-content>
+
+</edu-page-container>

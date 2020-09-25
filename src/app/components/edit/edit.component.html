@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+    <p>Note
+
+    </p>
+    <mat-form-field>
+      <mat-label>Reply message</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+    <button mat-button [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+  </div> 

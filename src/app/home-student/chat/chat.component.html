@@ -1,0 +1,51 @@
+<!-- <mat-sidenav-container class="container"> -->
+  <!-- <section *ngIf="selectedConversation"> -->
+    <!-- <div class="mat-typography conversation-header">
+      <!-- <h2>
+        <mat-icon>forum</mat-icon>
+        {{selectedConversation.display_name}}</h2> -->
+      <!-- <p>
+        <mat-icon>account_circle</mat-icon>
+        {{(selectedConversation.members | keys).length}} Members</p> -->
+    <!-- </div> --> 
+
+    <!-- <mat-divider></mat-divider> -->
+    <mat-list dense class="conversation-history mat-typography">
+      <mat-list-item *ngFor="let event of chats; index as i" [dir]="event.from.id === user.id ? 'rtl' : 'ltr'">
+        <img *ngIf="event.type == 'TEXT'" matListAvatar matTooltip="{{event.from.username}}" src="https://randomuser.me/api/portraits/thumb/lego/{{i}}.jpg"
+        />
+        <p *ngIf="event.type == 'TEXT'" [dir]="'ltr'">{{event.message}}</p>
+        <!-- <p *ngIf="event.type == 'member:joined'" class="text-center">
+          <b>{{selectedConversation.members[event.from].user.name}}</b> has joined the conversation</p> -->
+      </mat-list-item>
+    </mat-list>
+
+     <div class="conversation-input">
+      <!-- <mat-divider></mat-divider> -->
+      <!-- <mat-form-field class="full-width"> 
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message">
+        <input matInput placeholder="Start chatting..." name="text" [(ngModel)]="text"> 
+        <mat-icon matSuffix *ngIf="allowPost" (click)="sendText(text)" >send</mat-icon>
+        <mat-icon matSuffix *ngIf="!allowPost">send</mat-icon>
+       </mat-form-field> -->
+      </div> 
+       <form class="uk-position-bottom uk-flex">
+
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message" name="text" [(ngModel)]="text">
+        <div class="js-upload" uk-form-custom>
+            <input type="file" multiple>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>more</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+              <mat-icon matSuffix *ngIf="allowPost" (click)="sendText(text)" >send</mat-icon>
+              <mat-icon matSuffix *ngIf="!allowPost">send</mat-icon>
+            </button>
+        </div> 
+    </form>
+   
+  <!-- </section> -->
+<!-- </mat-sidenav-container> -->
+

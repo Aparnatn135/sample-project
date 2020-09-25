@@ -1,0 +1,87 @@
+<edu-form-card [formGroup]="progressform" formTitle="Assignment Progress">
+    <ng-container formfields>
+
+        <mat-vertical-stepper (selectionChange)="onSelectionChange($event)">
+            <mat-step *ngFor="let order of progressOrders">
+            <ng-template matStepLabel>
+               completed {{  order.percent}} %
+            </ng-template>
+            <edu-form-card [formGroup]="progressform">
+                <ng-container formfields>
+            
+                    <mat-form-field class="example-full-width">
+                        <input matInput disable name="work_percent" required formControlName="work_percent">
+                        <mat-placeholder class="placeholder">% Work Completed</mat-placeholder>
+                    </mat-form-field>
+            
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Info*</mat-label>
+                <textarea matInput formControlName="content" style="height: 50px;box-sizing: border-box;"></textarea>
+                    </mat-form-field>
+                      
+                    <!-- <div class="form-group">
+                        <label for="file">File</label>
+                    </div> -->
+            
+                </ng-container>
+            </edu-form-card>
+            </mat-step>
+
+          </mat-vertical-stepper>
+
+    </ng-container>
+  
+
+
+</edu-form-card>
+
+<edu-form-card [formGroup]="form" formTitle="Assignment Form">
+    <ng-container formfields>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="work_percent" required formControlName="work_percent">
+            <mat-placeholder class="placeholder">% Work Completed</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Info*</mat-label>
+    <textarea matInput formControlName="content" style="height: 100px;box-sizing: border-box;"></textarea>
+        </mat-form-field>
+          
+        <div class="form-group">
+            <label for="file">File*</label>
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                multiple
+                class="form-control"
+                (change)="onFileChange($event)">
+        </div>
+
+    </ng-container>
+    <ng-container actions>
+        <mat-card-content>  
+            <ul>  
+                <li *ngFor="let file of myFiles">  
+                 {{file.name}}
+                    <span id="file-label">  
+                        <button mat-icon-button (click)="removeFile(file)">
+                            <mat-icon>remove_circle</mat-icon>
+                        </button>
+                    </span>  
+                </li>  
+            </ul>  
+        </mat-card-content> 
+
+    </ng-container>
+
+    <ng-container actions>
+        <div style="display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;">
+            <button mat-raised-button (click)="upload()" color="accent" [disabled]="!form.valid">Submit Assignment</button>
+        </div>
+
+    </ng-container>
+</edu-form-card>

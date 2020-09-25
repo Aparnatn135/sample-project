@@ -1,0 +1,49 @@
+div[btn]{
+    
+
+    ul{
+        list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 0;
+    li {
+        margin-right: 20px;
+        @media (min-width: 450px) and (max-width: 600px) {
+            margin-right: 5px;
+       }
+       @media (min-width: 375px) and (max-width: 425px) {
+        margin-right: 7px;
+   }
+       .mat-button{
+        padding: 0 14px;
+       }
+    }
+    .btn{
+        min-width: 119px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(49, 44, 44, 0.87);
+        @media (min-width: 425px) and (max-width: 600px) {
+            min-width: 65px;
+            font-size: 12px;
+       }
+       @media (min-width: 375px) and (max-width: 425px) {
+        min-width: 65px;
+        font-size: 12px;
+        padding: 0 7px !important;
+
+   }
+    }
+    .active{
+        background: #26c6da;
+        color:#fff;
+    }
+    }
+}
+
+

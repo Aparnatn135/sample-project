@@ -1,0 +1,35 @@
+<edu-form-card [formTitle]="formTitle" [formGroup]="loginform">
+    <ng-container formfields>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="username" required formControlName="username">
+            <mat-placeholder class="placeholder">User Name</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput name="password" type="password" required formControlName="password">
+            <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Role</mat-label>
+            <mat-select name="role" required formControlName="role">
+                
+                <mat-option *ngFor="let role of rolesList" [value]="role.code">
+                    {{role.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </ng-container>
+
+    <ng-container actions>
+        <div style="display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;">
+            <button mat-raised-button (click)="submit()" color="accent"
+                [disabled]="!loginform.valid">Login</button>
+        </div>
+
+    </ng-container>
+</edu-form-card>

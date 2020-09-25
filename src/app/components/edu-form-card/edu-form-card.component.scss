@@ -1,0 +1,28 @@
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card{
+    @media only screen and (orientation: landscape) {
+        width:70%;
+    }
+    @media only screen and (orientation: portrait) {
+        width:calc(100% - 50px);
+    }
+}
+
+
+:host{
+    width: 100%;
+}
+
+.toolbar{
+    height:8%;
+}
+
+.example-full-width {
+    width: 100%;
+}

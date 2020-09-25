@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "aims-edu-online": {
+      "hosting": {
+        "aims-edu-online": [
+          "aims-edu-online"
+        ]
+      }
+    }
+  }
+}
