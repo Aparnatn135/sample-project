@@ -83,9 +83,10 @@
         </div>
     </mat-tab>
     <mat-tab label="Progress Tracking">
-        <mat-card class="example-card">
+       <mat-card class="example-card">
             <mat-card-content>
                 <div>
+                   
                     <div style="display: flex !important;
                         justify-content: center !important;
                         align-items: center !important;padding: 3px;">
@@ -119,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+               <div>
                     <div style="display: flex !important;
         justify-content: center !important;
         align-items: center !important;padding: 3px;">
@@ -190,11 +191,11 @@
                             </ng-container>
                         </div>
                     </div>
-                </div>
+              </div>
 
             </mat-card-content>
         </mat-card>
-
+        
 
     </mat-tab>
     <mat-tab label="Files Upload"></mat-tab>
@@ -205,15 +206,136 @@
             <li><a href="#">Student+Expert</a></li>
         </ul>
         <ul class="uk-switcher uk-margin">
-            <li><div class="uk-panel uk-panel-scrollable">
-                <chat-root [orderId]="order_id" [chatroom]="'tx'"></chat-root>
-            </div></li>
-            <li><div class="">
-                <chat-root [orderId]="order_id" [chatroom]="'tx'"></chat-root>
-            </div></li>
-            <li> <div class="">
-                <chat-root [orderId]="order_id" [chatroom]="'tx'"></chat-root>
-            </div></li>
+            <li><div class="uk-container uk-container-small">
+                <div class="uk-card uk-card-default uk-width-1-1@m uk-height-1-1 ">
+                 
+                  <div class="uk-panel uk-panel-scrollable">
+                     <p>Student</p>
+                     <p>Student</p>
+                     <p>Student</p>
+                     <p>Student</p>
+                     <p>Student</p>
+                     <p>Student</p>
+                     <p>Student</p>
+
+                  </div>
+                 
+                    <form class="uk-position-bottom uk-flex">
+                
+                          <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message">
+                          <div class="js-upload" uk-form-custom>
+                            <input type="file" multiple>
+                            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                              <mat-icon>more</mat-icon>
+                            </button>
+                          </div>
+                          <div class="example-button-container">
+                            <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                              <mat-icon>send</mat-icon>
+                            </button>
+                          </div>
+                      </form>
+                
+                </div>
+                </div></li>
+            <li><div class="uk-container uk-container-small">
+                <div class="uk-card uk-card-default uk-width-1-1@m uk-height-1-1 ">
+                 
+                  <div class="uk-panel uk-panel-scrollable">
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                    <p>Expert second</p>
+                  </div>
+                 
+                    <form class="uk-position-bottom uk-flex">
+                
+                          <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message">
+                          <div class="js-upload" uk-form-custom>
+                            <input type="file" multiple>
+                            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                              <mat-icon>more</mat-icon>
+                            </button>
+                          </div>
+                          <div class="example-button-container">
+                            <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                              <mat-icon>send</mat-icon>
+                            </button>
+                          </div>
+                      </form>
+                
+                </div>
+                </div></li>
+            <li><div class="uk-container uk-container-small">
+                <div class="uk-card uk-card-default uk-width-1-1@m uk-height-1-1 ">
+                 
+                  <div class="uk-panel uk-panel-scrollable">
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                    <p>Student+Expert</p>
+                  </div>
+                 
+                    <form class="uk-position-bottom uk-flex">
+                
+                          <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message">
+                          <div class="js-upload" uk-form-custom>
+                            <input type="file" multiple>
+                            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                              <mat-icon>more</mat-icon>
+                            </button>
+                          </div>
+                          <div class="example-button-container">
+                            <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                              <mat-icon>send</mat-icon>
+                            </button>
+                          </div>
+                      </form>
+                
+                </div>
+                </div> </li>
+            
+<!--<div class="uk-container uk-container-small">
+    <div class="uk-card uk-card-default uk-width-1-1@m uk-height-1-1 ">
+     
+      <div class="uk-panel uk-panel-scrollable">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+     
+        <form class="uk-position-bottom uk-flex">
+    
+              <input class="uk-input uk-width-1-1" type="text" placeholder="Type a Message">
+              <div class="js-upload" uk-form-custom>
+                <input type="file" multiple>
+                <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                  <mat-icon>more</mat-icon>
+                </button>
+              </div>
+              <div class="example-button-container">
+                <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                  <mat-icon>send</mat-icon>
+                </button>
+              </div>
+          </form>
+    
+    </div>
+    </div>-->
         </ul>
 
         <!-- <mat-tab-group [backgroundColor]="background">

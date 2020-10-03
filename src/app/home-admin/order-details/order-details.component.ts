@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs';
 import {HttpHeaders } from '@angular/common/http';
 import * as moment from 'moment';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @Component({

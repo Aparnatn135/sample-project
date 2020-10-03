@@ -20,15 +20,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AuthInterceptor} from './core/httpinterceptor/auth.interceptor';
 import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+
+
 // import {  NbChatModule } from '@nebular/theme';
-  import { ChatsComponent } from './chats/chats.component';
+  
+
+
 //  import {LayoutModule} from '@angular/cdk/layout';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-      ChatsComponent,
+    
+    
+      
+      
+      
+     
   ],
   // entryComponents:[ChatsComponent],
   imports: [
@@ -44,7 +53,7 @@ import { CoreModule } from './core/core.module';
     AngularFireAuthModule,
     MaterialModule,
    
-   
+    
 
     StoreModule.forRoot(reducers, {
       metaReducers,
